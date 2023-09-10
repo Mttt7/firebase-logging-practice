@@ -1,0 +1,19 @@
+<h1>BASE</h1>
+<p>
+  <a routerLink="/secret">Secret</a>
+</p>
+<div *ngIf="authService.user$ | async as user; else login">
+  <pre>
+    {{user | json}}
+  </pre>
+
+  <hr>
+  <button (click)="authService.signOut()">Logout</button>
+
+</div>
+
+<ng-template #login>
+  <button (click)="authService.googleSignin()">Login</button>
+</ng-template>
+
+<router-outlet></router-outlet>
