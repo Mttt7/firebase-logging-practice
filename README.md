@@ -1,1 +1,0 @@
-# firebase-logging-practice
